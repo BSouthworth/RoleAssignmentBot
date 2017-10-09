@@ -12,22 +12,56 @@ const client = new Discord.Client();
 //Message handler functions
 //Help function
 function help(message){
-  message.channel.send(config.prefix + config.listrolescommand + " List the available roles that can be self assigned.");
-  message.channel.send(config.prefix + config.addrolecommand + " <rolename> (Allows a user with the required role to add a role to be self assigned)");
-  message.channel.send(config.prefix + config.deleterolecommand + " <rolename> (Allows a user with the required role to remove a role for self-assignment");
-  message.channel.send(config.prefix + config.assignrolecommand + " <rolename> (Allows a user to assign a role to themselves)");
-  message.channel.send(config.prefix + config.unassignrolecommand + " <rolename> (Allows a user to remove a role from themselves)");
+  var helpString = config.prefix + config.helpcommand + " Display the help command.\n" +
+    config.prefix + config.listrolescommand + " List the available roles that can be self assigned.\n" +
+    config.prefix + config.addrolecommand + " <rolename> (Allows a user with the required role to add a role to be self assigned)\n" +
+    config.prefix + config.deleterolecommand + " <rolename> (Allows a user with the required role to remove a role for self-assignment\n" +
+    config.prefix + config.assignrolecommand + " <rolename> (Allows a user to assign a role to themselves)\n" +
+    config.prefix + config.unassignrolecommand + " <rolename> (Allows a user to remove a role from themselves)";
+  message.channel.send(helpString);
 }
 
 //List roles function
 function listRoles(message){
   //Since there are just keys in this JSON get the keys
   var roleKeys = Object.keys(roles);
-  message.channel.send("Roles available for self-assignment.");
+  message.channel.send("Roles available for self-assignment, seperated by spaces.");
   //List the keys
+  var widthcount = 0;
+  var rolesstring = "";
   for(i=0; i<roleKeys.length;i++){
-    message.channel.send(roleKeys[i]);
+    if(rolesstring.length > 1920){
+      message.channel.send(rolesstring);
+      rolesstring = "";
+      widthcount = 0;
+    }
+    if(roleKeys[i].length > 76 && widthcount != 0){
+      rolesstring += "\n";
+      rolesstring += roleKeys[i];
+      rolesstring += "\n"
+      widthcount = 0;
+    }
+    else if(roleKeys[i].length > 76){
+      rolesstring += roleKeys[i];
+      rolesstring += "\n"
+    }
+    else if(widthcount === 0){
+      rolesstring += roleKeys[i];
+      widthcount += roleKeys[i].length;
+    }
+    else if((roleKeys[i].length + widthcount) > 76){
+      rolesstring += "\n";
+      rolesstring += roleKeys[i];
+      widthcount = roleKeys[i].length;
+    }
+    else{
+      rolesstring += "    ";
+      rolesstring += roleKeys[i];
+      widthcount++;
+      widthcount += roleKeys[i].length;
+    }
   }
+  message.channel.send(rolesstring);
 }
 
 //Bot Management check function
