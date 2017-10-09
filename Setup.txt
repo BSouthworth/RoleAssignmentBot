@@ -1,0 +1,10 @@
+1) Install Node.js
+2) Clone bot files into a directory
+3) Use npm install in the directory from terminal/command prompt/etc to install all dependencies/modules.
+4) Create and get a bot token from https://discordapp.com/developers/applications/me. 
+"My Apps" -> "New App" -> Enter "App Name" and optionally add an app icon -> "Create App" -> "Create a Bot User"
+5) Copy "Client ID" from that page and use https://discordapp.com/oauth2/authorize?client_id=Client_ID&scope=bot replacing Client_ID with the copied id or go to https://discordapi.com/permissions.html
+This does require Administrator permissions I think
+7) Put your bot token and change whatever else you need to in config.json.
+8) Start the bot with node index.js or nodejs index.js
+(Set up mostly taken from https://github.com/synzen/Discord.RSS/wiki/Starting-the-Bot)
