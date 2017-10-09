@@ -1,0 +1,14 @@
+{
+  "name": "RoleAssignmentBot",
+  "version": "1.0.0",
+  "description": "Simple bot to self assign roles in discord",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Barrett Southworth",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "fs": "0.0.1-security"
+  }
+}

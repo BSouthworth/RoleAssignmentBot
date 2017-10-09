@@ -1,0 +1,13 @@
+{
+  "token":"",
+  "prefix":"ra!",
+  "host":"localhost",
+  "port":"3306",
+  "botmanagementrole":"Moderator",
+  "helpcommand":"help",
+  "listrolescommand":"list-roles",
+  "addrolecommand":"add-role",
+  "deleterolecommand":"delete-role",
+  "assignrolecommand":"assign-role",
+  "unassignrolecommand":"unassign-role"
+}
