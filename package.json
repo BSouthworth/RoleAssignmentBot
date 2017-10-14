@@ -1,6 +1,6 @@
 {
   "name": "RoleAssignmentBot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple bot to self assign roles in discord",
   "main": "index.js",
   "scripts": {},
