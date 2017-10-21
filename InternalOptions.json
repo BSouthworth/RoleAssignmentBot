@@ -1,0 +1,7 @@
+{
+  "MaxMessageAttempts":4,
+  "DelayIntervalBeforeResendingMessage":500,
+  "StringLengthToSend":1920,
+  "LineLessThan80":76,
+  "terminateonMsgSendFail":false
+}

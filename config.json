@@ -9,5 +9,6 @@
   "addrolecommand":"add-role",
   "deleterolecommand":"delete-role",
   "assignrolecommand":"assign-role",
-  "unassignrolecommand":"unassign-role"
+  "unassignrolecommand":"unassign-role",
+  "creditscommand":"credits"
 }

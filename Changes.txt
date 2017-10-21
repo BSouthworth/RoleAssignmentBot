@@ -1,0 +1,8 @@
+Version 1.0.0
+-Initial Version
+Version 1.0.1
+-Quick bug fix to unassign a role
+Version 1.1.0
+-Much better use of promise checking
+-Better error checking
+-Added Credits command
